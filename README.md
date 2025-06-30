@@ -7,6 +7,7 @@ REQUISITOS:
 - Navegador Web (Chrome, Firefox, etc.)
 
 =====================================
+
 1) VERIFICAR PHP E COMPOSER INSTALADOS
 =====================================
 php -v
@@ -18,6 +19,7 @@ Se não estiverem instalados:
 - MySQL (XAMPP): https://www.apachefriends.org/pt_br/index.html
 
 =====================================
+
 2) NAVEGAR ATÉ A PASTA DO PROJETO
 =====================================
 cd caminho/ate/reserva-salas
@@ -29,6 +31,7 @@ Exemplo Linux:
 cd /caminho/para/reserva-salas
 
 =====================================
+
 3) CONFIGURAR O ARQUIVO .ENV
 =====================================
 Copiar o arquivo de exemplo:
@@ -48,17 +51,20 @@ database.default.password =
 database.default.DBDriver = MySQLi
 
 =====================================
+
 4) INSTALAR DEPENDÊNCIAS VIA COMPOSER
 =====================================
 composer install
 
 =====================================
+
 5) INSTALAR DOMPDF (CASO NECESSÁRIO)
 =====================================
 composer require dompdf/dompdf
 composer dump-autoload
 
 =====================================
+
 6) CRIAR O BANCO DE DADOS
 =====================================
 Acesse o phpMyAdmin ou o terminal do MySQL e execute:
@@ -66,6 +72,7 @@ Acesse o phpMyAdmin ou o terminal do MySQL e execute:
 CREATE DATABASE reserva_salas;
 
 =====================================
+
 7) IMPORTAR O BANCO DE DADOS
 =====================================
 Se o projeto tiver um arquivo .sql:
@@ -76,6 +83,7 @@ Se o projeto tiver um arquivo .sql:
 - Escolha o arquivo .sql fornecido e execute
 
 =====================================
+
 8) INICIAR O SERVIDOR INTEGRADO DO CODEIGNITER
 =====================================
 php spark serve
@@ -85,7 +93,8 @@ Depois, abrir o navegador e acessar:
 http://localhost:8080
 
 =====================================
-10) TESTES DE PDF OU OUTROS (OPCIONAL)
+
+9) TESTES DE PDF OU OUTROS (OPCIONAL)
 =====================================
 Se precisar criar controller de exportação PDF:
 
