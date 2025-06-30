@@ -1,68 +1,104 @@
-# CodeIgniter 4 Application Starter
+PASSO A PASSO - INSTALAÇÃO E EXECUÇÃO DO PROJETO RESERVA-SALAS (CodeIgniter 4)
 
-## What is CodeIgniter?
+REQUISITOS:
+- PHP 8.x
+- Composer
+- MySQL (pode ser via XAMPP)
+- Navegador Web (Chrome, Firefox, etc.)
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+=====================================
+1) VERIFICAR PHP E COMPOSER INSTALADOS
+=====================================
+php -v
+composer --version
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+Se não estiverem instalados:
+- PHP: https://windows.php.net/download/
+- Composer: https://getcomposer.org/download/
+- MySQL (XAMPP): https://www.apachefriends.org/pt_br/index.html
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+=====================================
+2) NAVEGAR ATÉ A PASTA DO PROJETO
+=====================================
+cd caminho/ate/reserva-salas
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+Exemplo Windows:
+cd C:\xampp\htdocs\reserva-salas
 
-## Installation & updates
+Exemplo Linux:
+cd /caminho/para/reserva-salas
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+=====================================
+3) CONFIGURAR O ARQUIVO .ENV
+=====================================
+Copiar o arquivo de exemplo:
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+No Windows:
+copy env .env
 
-## Setup
+No Linux/Mac:
+cp env .env
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+Depois, editar o .env e configurar o banco de dados:
 
-## Important Change with index.php
+database.default.hostname = localhost
+database.default.database = reserva_salas
+database.default.username = root
+database.default.password =
+database.default.DBDriver = MySQLi
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+=====================================
+4) INSTALAR DEPENDÊNCIAS VIA COMPOSER
+=====================================
+composer install
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+=====================================
+5) INSTALAR DOMPDF (CASO NECESSÁRIO)
+=====================================
+composer require dompdf/dompdf
+composer dump-autoload
 
-**Please** read the user guide for a better explanation of how CI4 works!
+=====================================
+6) CRIAR O BANCO DE DADOS
+=====================================
+Acesse o phpMyAdmin ou o terminal do MySQL e execute:
 
-## Repository Management
+CREATE DATABASE reserva_salas;
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+=====================================
+7) IMPORTAR O BANCO DE DADOS
+=====================================
+Se o projeto tiver um arquivo .sql:
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+- Acesse o phpMyAdmin
+- Selecione o banco "reserva_salas"
+- Vá em Importar
+- Escolha o arquivo .sql fornecido e execute
 
-## Server Requirements
+=====================================
+8) INICIAR O SERVIDOR INTEGRADO DO CODEIGNITER
+=====================================
+php spark serve
 
-PHP version 8.1 or higher is required, with the following extensions installed:
+Depois, abrir o navegador e acessar:
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+http://localhost:8080
 
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> - The end of life date for PHP 8.1 will be December 31, 2025.
+=====================================
+10) TESTES DE PDF OU OUTROS (OPCIONAL)
+=====================================
+Se precisar criar controller de exportação PDF:
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+php spark make:controller PdfExport
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+=====================================
+PRONTO! O SISTEMA ESTARÁ FUNCIONANDO!
+
+Funcionalidades Incluídas no Projeto:
+- Login e Registro de Usuários
+- Gerenciamento de Salas
+- Gerenciamento de Reservas (com Filtros, Ordenação, Exportação CSV/PDF)
+- Relatórios Gráficos (Chart.js - Barras e Pizza)
+- Histórico de Reservas por Usuário
+- Perfil de Usuário
+- Página Sobre o Sistema
