@@ -166,7 +166,5 @@ php spark make:controller PdfExport
 * Perfil de Usuário
 * Página Sobre o Sistema
 
-```
-
 ---
 
