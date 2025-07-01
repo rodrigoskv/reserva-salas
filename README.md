@@ -118,7 +118,7 @@ php spark migrate
 
 ---
 
-## 8) (OPCIONAL) RODAR SEEDERS (SE HOUVER)
+## 8) (OPCIONAL) RODAR SEEDERS (VOCÊ TAMBÉM PODE UTILIZAR O SQL DIRETO EM SEU WORKBENCH!!)
 
 ```bash
 php spark db:seed UserSeeder
