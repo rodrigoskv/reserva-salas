@@ -91,26 +91,13 @@ composer dump-autoload
 
 ---
 
-## 6) CRIAR O BANCO DE DADOS
+## 6) IMPORTAR O BANCO DE DADOS
 
-Acesse o phpMyAdmin ou o terminal do MySQL e execute:
-
-```sql
-CREATE DATABASE reserva_salas;
-```
-
----
-
-## 7) IMPORTAR O BANCO DE DADOS
-
-Se o projeto tiver um arquivo `.sql`:
-
-* Acesse o **phpMyAdmin**
-* Selecione o banco `reserva_salas`
+* Acesse seu administrador de SQL
 * Vá em **Importar**
 * Escolha o arquivo `.sql` fornecido e execute
 
-**Se o projeto usar Migrations:**
+** (OPCIONAL) Se quiser usar Migrations:**
 
 ```bash
 php spark migrate
@@ -118,7 +105,7 @@ php spark migrate
 
 ---
 
-## 8) (OPCIONAL) RODAR SEEDERS (VOCÊ TAMBÉM PODE UTILIZAR O SQL DIRETO EM SEU WORKBENCH!!)
+## (OPCIONAL) Se quiser rodar os seeders (VOCÊ TAMBÉM PODE UTILIZAR O SQL DIRETO EM SEU WORKBENCH!!)
 
 ```bash
 php spark db:seed UserSeeder
@@ -130,7 +117,7 @@ php spark db:seed ReservationSeeder
 
 ---
 
-## 9) INICIAR O SERVIDOR INTEGRADO DO CODEIGNITER
+## 7) INICIAR O SERVIDOR INTEGRADO DO CODEIGNITER
 
 ```bash
 php spark serve
@@ -140,16 +127,6 @@ Depois, abrir o navegador e acessar:
 
 ```
 http://localhost:8080
-```
-
----
-
-## 10) TESTES DE PDF OU OUTROS (OPCIONAL)
-
-Se precisar criar controller de exportação PDF:
-
-```bash
-php spark make:controller PdfExport
 ```
 
 ---
