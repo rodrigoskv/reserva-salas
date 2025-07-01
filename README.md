@@ -1,6 +1,6 @@
 ---
 
-````markdown
+
 # PASSO A PASSO - INSTALAÇÃO E EXECUÇÃO DO PROJETO RESERVA-SALAS (CodeIgniter 4)
 
 ## REQUISITOS:
