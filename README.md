@@ -97,7 +97,7 @@ composer dump-autoload
 * Vá em **Importar**
 * Escolha o arquivo `.sql` fornecido e execute
 
-** (OPCIONAL) Se quiser usar Migrations:**
+ (OPCIONAL/caso não use o arquivo sql) Se quiser usar Migrations:
 
 ```bash
 php spark migrate
@@ -105,7 +105,7 @@ php spark migrate
 
 ---
 
-## (OPCIONAL) Se quiser rodar os seeders (VOCÊ TAMBÉM PODE UTILIZAR O SQL DIRETO EM SEU WORKBENCH!!)
+(OPCIONAL/caso não use o arquivo sql) Se quiser usar os seeders 
 
 ```bash
 php spark db:seed UserSeeder
